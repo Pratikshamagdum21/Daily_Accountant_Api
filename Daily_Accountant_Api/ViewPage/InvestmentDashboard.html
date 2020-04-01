@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/StyleSheet.css" />
+    <link href="../assets/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="../assets/script/fontawesome.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="col-md-12">
+        <div id="content">
+            
+            <div class="container" id="mainContent">
+                <!-- Dashboard -->
+                <div class="container" style="padding:0% 8% 0% 8%">
+                    <div class="row">
+                        <div class="col-md-4 Box">
+                            <div class="col-md-12"><span class="balance">Total Investement Budget</span></div>
+                            <div class="col-md-12"><span class="amount">+10,000.00 INR</span></div>
+                        </div>
+                        <div class="col-md-4 Box">
+                            <div class="col-md-12"><span class="balance">Total Invested Amount</span></div>
+                            <div class="col-md-12"><span class="amount">0.00 INR</span></div>
+                        </div>
+                        <div class="col-md-4 Box">
+                            <div class="col-md-12"><span class="balance">Total Borrowed Money</span></div>
+                            <div class="col-md-12"><span class="amount">0.00 INR</span></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" style="float:right">
+                            <button type="button" class="btn btn-success btntransaction" data-toggle="modal" data-target="#myModal">
+                                <span class="fa fa-plus-circle" style="margin-right:5px;height:20px;width:20px"></span>
+                                Add Transaction
+                            </button>
+                        </div>
+                        <div class="container col-md-12" style="padding: 15px; background-color: #e6eaf3;margin-top:30px">
+                            <div class="Name col-md-3" style="float:left">
+                                <input type="text" class="form-control" id="timepicker" placeholder="Search Name" />
+                            </div>
+                            <div class="dropdown col-md-2">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Select Category
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><input class="form-control" type="text" placeholder="Search" aria-label="Search"></li>
+                                    <li><a href="#">Rent</a></li>
+                                    <li><a href="#">Gift</a></li>
+                                    <li><a href="#">Food Drinking</a></li>
+                                    <li><a href="#">Shopping</a></li>
+                                    <li><a href="#">Bills and fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="dates col-md-2" style="float:left">
+                                <input type="text" class="form-control" id="timepicker" placeholder="yyyy-mm-dd" />
+                            </div>
+                            <div class="col-md-2" style="float:right">
+                                <button class="btn btn-success dropdown-toggle" type="button" style="float:right">
+                                    Search  <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <div class="col-md-1"><i class="fa fa-sort" aria-hidden="true" style="margin-top:13px;transform: scale(2,2);"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dashboard End -->
+                <form id="myForm">
+                    <div class="container-fluid">
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <div class="modal-content">
+                                    <div class="col-md-12" style="margin:20px">
+                                        <div class="col-md-3">
+                                            <label for="category" class="category">Category</label>
+                                            <div class="trasansaction" data-validate="Username is required">
+                                                <input id="inp-category" class="trasansaction2 validate-input" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="category" class="category">Date</label>
+                                            <div class="trasansaction" data-validate="Username is required">
+                                                <input type="text" class="form-control" id="timepicker1" placeholder="yyyy-mm-dd" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="category" class="category">Note(optional)</label>
+                                            <div class="trasansaction" data-validate="Username is required">
+                                                <input class="trasansaction2 validate-input" id="inp-username" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="category" class="category">Amount</label>
+                                            <div class="trasansaction" data-validate="Username is required">
+                                                <input class="trasansaction2 validate-input" id="inp-amount" type="text" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: #e5ebee;color: #7b93a4;font-weight:bold" onclick="addItem()">Add Transaction</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="container" class="container" style="margin-top:50px">
+                    <table class="table table-hover" id="ExpensesId">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Note</th>
+                                <th>Amount</th>
+                                <th>Delete</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyId"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/script/jquery-3.3.1.slim.min.js"></script>
+    <script src="../assets/script/SideBar.js"></script>
+    <script src="../assets/script/jquery.js"></script>
+    <script src="../assets/script/popper.js"></script>
+    <script src="../assets/script/bootstrap.min.js"></script>
+    <script src="../assets/script/Script.js"></script>
+    <script src="../assets/script/datepicker.js"></script>
+    <script src="../assets/script/solid.js"></script>
+    <script src="../assets/script/fontawesome.js"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/script/SideBar.js"></script>
+    <script src="../assets/script/bootbox.min.js.map"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.js" crossorigin="anonymous"></script>
+</body>
+</html>

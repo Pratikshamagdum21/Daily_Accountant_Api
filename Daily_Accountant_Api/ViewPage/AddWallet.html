@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <title>Add Wallet</title>
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/AddWallet.css" rel="stylesheet" />
+
+    <link href="../assets/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../assets/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="../assets/script/fontawesome.js"></script>
+    <script src="../assets/script/jquery.min.js"></script>
+    <script src="../assets/script/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Add Wallet</h2>
+                    <form>
+                        <div class="row row-space">
+                            <div class="col-md-12">
+                                <div class="input-group col-md-5">
+                                    <label class="label">Wallet Name</label>
+                                    <input class="input--style-4" type="text" name="first_name" id="WalletName">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left: 12px;">
+                                <div class="input-group col-md-6">
+                                    <label class="label">Amount</label>
+                                    <input class="input--style-4" type="text" name="first_name" id="WalletAmount">
+                                </div>
+                                <div class="col-md-2" style="margin-left:30px">
+                                    <button id="AddWallet"class="btn btn--radius-2 btn--blue" type="submit" style="margin-top:30px" onclick="AddWallet()">Add category</button>
+                                </div>
+                            </div>
+                            <div id="container" class="container" style="margin-top:50px">
+                                <table class="table table-hover" id="ExpensesId">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Wallet Name</th>
+                                            <th>Amount</th>
+                                            <th>Delete</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyId"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/script/moment.js"></script>
+    <script src="../assets/script/daterangepicker.js"></script>
+    <script src="../assets/script/SideBar.js"></script>
+    <script src="../assets/script/Script.js"></script>
+    <script src="../assets/script/datepicker.js"></script>
+    <script src="../assets/script/solid.js"></script>
+    <script src="../assets/script/fontawesome.js"></script>
+    <script src="../assets/script/popper.min.js"></script>
+    <script src="../assets/script/SideBar.js"></script>
+    <script src="../assets/script/ApiCall.js"></script>
+    <script src="../assets/script/jquery.dataTables.min.js"></script>
+    <script src="../assets/script/bootbox.min.js"></script>
+
+</body>
+</html>

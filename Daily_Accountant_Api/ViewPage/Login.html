@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="notify"><span id="notifyType" class=""></span></div>
+    <div class="row">
+        <div class="container-login justify-content-center">
+            <div class="align-self-center login-form col-md-4">
+                <form>
+                   <span class="headline">
+                        Sign In With
+                    </span>
+                   <div class="col-md-12" style="margin-top:50px">
+                       <div class="facebook col-md-4">
+                           <a href="#">
+                               <i class="fa fa-facebook-official" style="margin-right:10px"></i>
+                               Facebook
+                           </a>
+                       </div>
+                       <div class="google col-md-4">
+                           <a href="#">
+                               <img src="../Image/icon-google.png" alt="GOOGLE">
+                               Google
+                           </a>
+                       </div>
+                   </div>
+                   <div class="col-md-12" style="margin-top:40px">
+                       <div class="p-t-31 p-b-9">
+                           <span class="txt1">
+                               Email
+                           </span>
+                       </div>
+                       <div class="usernamediv" data-validate="Username is required">
+                           <input class="username2 validate-input" type="text" name="username" id="userName" required>
+                           <span class="focus-input100"></span>
+                       </div>
+                       <div class="Password" style="margin-top:10px">
+                           <span class="txt1">
+                               Password
+                           </span>
+
+                           <a href="#" class="txt2">
+                               Forgot?
+                           </a>
+                       </div>
+                       <div class="passworddiv" data-validate="Password is required">
+                           <input class="username2 validate-input" type="password" name="pass" id="password" required>
+                           <span class="focus-input100"></span>
+                       </div>
+                       <div id="PasswordError" class="alert alert-error" data-bind="errorMessage: password">
+                            Passwords must have at least 8 characters and contain at least two of the following: uppercase letters, lowercase letters, numbers, and symbols.
+                       </div>
+                       <div class="signbt">
+                           <button class="login-btn" id="LoginSubmit" onclick="Submit()">
+                               Sign In
+                           </button>
+                       </div>
+                   </div>
+                    <div class="buttomtxt text-center">
+                        <span class="txt2">
+                            Not a member?
+                        </span>
+
+                        <a href="Register.html" class="txt2 bo1">
+                            Sign up now
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../assets/script/LoginValidation.js"></script>
+    <script src="../assets/script/ApiCall.js"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+</body>
+</html>
