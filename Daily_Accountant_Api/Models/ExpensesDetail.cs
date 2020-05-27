@@ -13,7 +13,7 @@ namespace Daily_Accountant_Api.Models
         public int Expenses_Id { get; set; }
 
         [ForeignKey("registerId")]
-        public virtual User register { get; set; }
+        public virtual Registers register { get; set; }
 
         public int registerId { get; set; }
 

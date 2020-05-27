@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Daily_Accountant_Api.Providers;
 using Daily_Accountant_Api.Models;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Daily_Accountant_Api
 {
@@ -23,8 +24,8 @@ namespace Daily_Accountant_Api
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationDbContext>(() => new ApplicationDbContext());
+            app.CreatePerOwinContext<UserManager<IdentityUser>>(CreateManager);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
@@ -65,5 +66,21 @@ namespace Daily_Accountant_Api
             //    ClientSecret = ""
             //});
         }
+        private static UserManager<IdentityUser> CreateManager(IdentityFactoryOptions<UserManager<IdentityUser>> options, IOwinContext context)
+        {
+            var userStore = new UserStore<IdentityUser>(context.Get<ApplicationDbContext>());
+            var owinManager = new UserManager<IdentityUser>(userStore);
+            return owinManager;
+        }
+
+    //    app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions  
+    //{  
+    //    TokenEndpointPath = new PathString("/oauth/token"),  
+    //    Provider = new AuthorizationServerProvider(),  
+    //    AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),  
+    //    AllowInsecureHttp = true,  
+                   
+    //});  
+    //app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
     }
 }

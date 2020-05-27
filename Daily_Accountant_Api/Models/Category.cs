@@ -11,7 +11,7 @@ namespace Daily_Accountant_Api.Models
 
         public string CategoryName { get; set; }
 
-        public virtual User register { get; set; }
+        public virtual Registers register { get; set; }
 
         public int registerId { get; set; }
     }

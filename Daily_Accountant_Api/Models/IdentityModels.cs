@@ -21,12 +21,17 @@ namespace Daily_Accountant_Api.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<User> register { get; set; }
+        public DbSet<User> user { get; set; }
+        public DbSet<Registers> register { get; set; }
         public DbSet<ExpensesDetail> expensesDetails { get; set; }
         public DbSet<WalletDetails> walletDetails { get; set; }
         public DbSet<Category> category { get; set; }
         public DbSet<InvestmentDetails> investmentdetails { get; set; }
         public DbSet<InvestmentNameId> investmentnameid { get; set; }
+        public DbSet<MoneyLender> moneyLender { get; set; }
+        public DbSet<BorrowedMoney> borrowedMoney { get; set; }
+        public DbSet<Budget> budget { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

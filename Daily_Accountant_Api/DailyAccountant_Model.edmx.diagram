@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9fc1056e52224a4482936503181ee37d" Name="Diagram1">
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.AspNetRole" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.AspNetUserClaim" Width="1.5" PointX="12.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.AspNetUserLogin" Width="1.5" PointX="12.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.AspNetUser" Width="1.5" PointX="10" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.Category" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.ExpensesDetail" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.InvestmentDetail" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.InvestmentNameId" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.User" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.WalletDetail" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_Categories_dbo_Registers_registerId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_ExpensesDetails_dbo_Categories_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_ExpensesDetails_dbo_Registers_registerId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_InvestmentDetails_dbo_InvestmentNameIds_Investment_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_InvestmentDetails_dbo_Registers_registerId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.FK_dbo_WalletDetails_dbo_Registers_registerId" ManuallyRouted="false" />
+        <AssociationConnector Association="Daily_Accountant_DbModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Daily_Accountant_DbModel.Register" Width="1.5" PointX="8.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

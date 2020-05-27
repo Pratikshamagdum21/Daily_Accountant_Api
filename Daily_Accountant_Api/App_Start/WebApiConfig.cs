@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.Cors;
+using System.Net.Http.Headers;
 
 namespace Daily_Accountant_Api
 {
@@ -16,6 +18,7 @@ namespace Daily_Accountant_Api
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/octet-stream"));
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -25,6 +28,8 @@ namespace Daily_Accountant_Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.EnableCors(new EnableCorsAttribute("http://localhost:3000", "*", "*"));
         }
     }
 }

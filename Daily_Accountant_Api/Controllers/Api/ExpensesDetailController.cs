@@ -14,9 +14,11 @@ namespace Daily_Accountant_Api.Controllers.Api
     public class ExpensesDetailController : ApiController
     {
         private ApplicationDbContext _context;
+        private Daily_Accountant_DbEntities DB;
         public ExpensesDetailController()
         {
             _context = new ApplicationDbContext();
+            DB = new Daily_Accountant_DbEntities();
         }
 
         public IHttpActionResult GetExpenses(string query = null)
@@ -63,12 +65,13 @@ namespace Daily_Accountant_Api.Controllers.Api
         {
             if (!ModelState.IsValid)
                 return BadRequest();
-
+    
             expensesdetail.registerId = 1;
-            _context.expensesDetails.Add(expensesdetail);
+            DB.ExpensesDetails.Add(expensesdetail);
             _context.SaveChanges();
-            
+
             return Created(new Uri(Request.RequestUri + "/" + expensesdetail.Expenses_Id), expensesdetail);
         }
+
     }
 }

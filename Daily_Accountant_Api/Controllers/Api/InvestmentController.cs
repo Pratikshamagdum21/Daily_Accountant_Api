@@ -17,18 +17,18 @@ namespace Daily_Accountant_Api.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        [ActionName("AddInvestment")]
-        [HttpPost]
-        public IHttpActionResult CreateInvestment(InvestmentNameId investmentnameid)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest();
+        //[ActionName("AddInvestment")]
+        //[HttpPost]
+        //public IHttpActionResult CreateInvestment(InvestmentNameId investmentnameid)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
 
-            _context.investmentnameid.Add(investmentnameid);
-            _context.SaveChanges();
+        //    _context.investmentnameid.Add(investmentnameid);
+        //    _context.SaveChanges();
 
-            return Created(new Uri(Request.RequestUri + "/" + investmentnameid.Id), investmentnameid);
-        }
+        //    return Created(new Uri(Request.RequestUri + "/" + investmentnameid.Id), investmentnameid);
+        //}
    
     }
 }
